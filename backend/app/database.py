@@ -15,8 +15,8 @@ def create_tables():
         """"
         CREATE TABLE users(
         id SERIAL PRIMARY KEY,
-        username VACHAR (255) NOT NULL,
-        password VACHAR (255) NOT NULL,
+        username VARCHAR (255) NOT NULL,
+        password VARCHAR (255) NOT NULL
         )
         """,
         """
@@ -24,7 +24,7 @@ def create_tables():
         id SERIAL PRIMARY KEY,
         user_id INTEGER NOT NULL,
         text_content TEXT NOT NULL,
-        date TIMESTAMP DEFAUL CURRENT_TIMESTAMP,
+        date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         nlp_results JSON,
         FOREIGN KEY (user_id) REFERENCES users (id)
         )
